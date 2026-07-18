@@ -10,5 +10,21 @@
   },
   "dependencies": {
     "@docmd/core": "^0.8.9"
-  }
+  },
+  "description": "Java烘焙师的架构笔记",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topcoding/arch-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/topcoding/arch-notes/issues"
+  },
+  "homepage": "https://github.com/topcoding/arch-notes#readme"
 }

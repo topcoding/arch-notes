@@ -12,4 +12,19 @@ permissions:
 
 jobs:
   docs:
-    uses: docmd-io/deploy/.github/workflows/deploy.yml@v1
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docmd-io/deploy@v1
+        id: build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.build.outputs.site-dir }}
+
+      - uses: actions/deploy-pages@v4
+        id: deploy

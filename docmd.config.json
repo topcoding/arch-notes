@@ -3,7 +3,6 @@
   "url": "https://topcoding.github.io/arch-notes/",
   "src": "docs",
   "out": "site",
-  "base": "/arch-notes/",
   "engine": "js",
   "layout": {
     "spa": true,
@@ -46,27 +45,27 @@
       "icon": "rocket",
       "collapsible": true,
       "children": [
-        { "title": "CPU使用率不均匀排查", "path": "/architect-essentials/troubleshooting-uneven-cpu-usage", "external": false },
-        { "title": "分布式事务方案选型", "path": "/architect-essentials/distributed-transaction-solution", "external": false },
-		{ "title": "如何做业务数据的平滑迁移", "path": "/architect-essentials/smoothly-migrate-business-data", "external": false },
-		{ "title": "灰度方案汇总", "path": "/architect-essentials/grayscale-solution-summary", "external": false },
-		{ "title": "后端程序员需要了解的数仓知识", "path": "/architect-essentials/data-warehouse-knowledge-for-backend-developers", "external": false },
-		{ "title": "限流方案选型（原理篇）", "path": "/architect-essentials/rate-limiting-solution-principle", "external": false },
-		{ "title": "限流方案选型（使用篇）", "path": "/architect-essentials/rate-limiting-solution-practice", "external": false },
-		{ "title": "缓存更新模式总结", "path": "/architect-essentials/cache-update-pattern-summary", "external": false },
-		{ "title": "实时对账与离线对账", "path": "/architect-essentials/realtime-and-offline-reconciliation", "external": false },
-		{ "title": "业务扩展模式选型", "path": "/architect-essentials/business-expansion-model-selection", "external": false },
-		{ "title": "系统容量现状checklist", "path": "/architect-essentials/system-capacity-status-checklist", "external": false },
-		{ "title": "HBase行键设计与应用", "path": "/architect-essentials/hbase-row-key-design-and-application", "external": false },
-		{ "title": "多维度查询的最佳实践", "path": "/architect-essentials/best-practice-for-multi-dimensional-query", "external": false },
-		{ "title": "Redis的几种集群方案", "path": "/architect-essentials/redis-cluster-solutions", "external": false },
-		{ "title": "本地缓存原理和应用", "path": "/architect-essentials/local-cache-principal-and-application", "external": false },
-		{ "title": "系统性解决幂等问题", "path": "/architect-essentials/systematically-solving-idempotency-issues", "external": false },
-		{ "title": "如何做容量预估和调优", "path": "/architect-essentials/how-to-do-capacity-estimation-and-tuning", "external": false },
-		{ "title": "巧用Canal实现异步、解耦的架构", "path": "/architect-essentials/using-canal-to-achieve-asynchronous-decoupled-architecture", "external": false },
-		{ "title": "MySQL主从延迟解决办法", "path": "/architect-essentials/ways-to-fix-mysql-master-slave-lag", "external": false },
-		{ "title": "MySQL主从同步原理和应用", "path": "/architect-essentials/mysql-master-slave-replication-principle-and-application", "external": false },
-		{ "title": "应用开发中的存储架构进化史——从起步到起飞", "path": "/architect-essentials/evolution-of-storage-architecture-in-app-development", "external": false }
+        { "title": "CPU使用率不均匀排查", "path": "/troubleshooting-uneven-cpu-usage", "external": false },
+        { "title": "分布式事务方案选型", "path": "/distributed-transaction-solution", "external": false },
+		{ "title": "如何做业务数据的平滑迁移", "path": "/smoothly-migrate-business-data", "external": false },
+		{ "title": "灰度方案汇总", "path": "/grayscale-solution-summary", "external": false },
+		{ "title": "后端程序员需要了解的数仓知识", "path": "/data-warehouse-knowledge-for-backend-developers", "external": false },
+		{ "title": "限流方案选型（原理篇）", "path": "/rate-limiting-solution-principle", "external": false },
+		{ "title": "限流方案选型（使用篇）", "path": "/rate-limiting-solution-practice", "external": false },
+		{ "title": "缓存更新模式总结", "path": "/cache-update-pattern-summary", "external": false },
+		{ "title": "实时对账与离线对账", "path": "/realtime-and-offline-reconciliation", "external": false },
+		{ "title": "业务扩展模式选型", "path": "/business-expansion-model-selection", "external": false },
+		{ "title": "系统容量现状checklist", "path": "/system-capacity-status-checklist", "external": false },
+		{ "title": "HBase行键设计与应用", "path": "/hbase-row-key-design-and-application", "external": false },
+		{ "title": "多维度查询的最佳实践", "path": "/best-practice-for-multi-dimensional-query", "external": false },
+		{ "title": "Redis的几种集群方案", "path": "/redis-cluster-solutions", "external": false },
+		{ "title": "本地缓存原理和应用", "path": "/local-cache-principal-and-application", "external": false },
+		{ "title": "系统性解决幂等问题", "path": "/systematically-solving-idempotency-issues", "external": false },
+		{ "title": "如何做容量预估和调优", "path": "/how-to-do-capacity-estimation-and-tuning", "external": false },
+		{ "title": "巧用Canal实现异步、解耦的架构", "path": "/using-canal-to-achieve-asynchronous-decoupled-architecture", "external": false },
+		{ "title": "MySQL主从延迟解决办法", "path": "/ways-to-fix-mysql-master-slave-lag", "external": false },
+		{ "title": "MySQL主从同步原理和应用", "path": "/mysql-master-slave-replication-principle-and-application", "external": false },
+		{ "title": "应用开发中的存储架构进化史——从起步到起飞", "path": "/evolution-of-storage-architecture-in-app-development", "external": false }
       ]
     },
     {
@@ -74,11 +73,11 @@
       "icon": "rocket",
       "collapsible": true,
       "children": [
-        { "title": "Java反射原理和实际用法", "path": "/java/java-reflection-principle-and-practice", "external": false },
-        { "title": "Spring cache源码分析", "path": "/java/analysis-of-spring-cache-source-code", "external": false },
-		{ "title": "Spring @Async的异常处理", "path": "/java/exception-handling-in-spring-async", "external": false },
-		{ "title": "Spring Boot应用中的异常处理", "path": "/java/exception-handling-in-spring-boot-applications", "external": false },
-		{ "title": "Java子线程中的异常处理（通用）", "path": "/java/exception-handling-in-java-child-threads", "external": false }
+        { "title": "Java反射原理和实际用法", "path": "/java-reflection-principle-and-practice", "external": false },
+        { "title": "Spring cache源码分析", "path": "/analysis-of-spring-cache-source-code", "external": false },
+		{ "title": "Spring @Async的异常处理", "path": "/exception-handling-in-spring-async", "external": false },
+		{ "title": "Spring Boot应用中的异常处理", "path": "/exception-handling-in-spring-boot-applications", "external": false },
+		{ "title": "Java子线程中的异常处理（通用）", "path": "/exception-handling-in-java-child-threads", "external": false }
       ]
     },
     {
@@ -86,9 +85,9 @@
       "icon": "rocket",
       "collapsible": true,
       "children": [
-        { "title": "AI编程实战：从零到一搭建全栈项目", "path": "/programming-in-action/ai-programming-in-action-building-a-full-stack-project-from-scratch", "external": false },
-        { "title": "后端程序员生产力工具合集", "path": "/programming-in-action/productivity-tools-for-backend-developers", "external": false },
-		{ "title": "树莓派实战：微信机器人（itchat实现）", "path": "/programming-in-action/raspberry-pi-in-action-wechat-bot-implemented-with-itchat", "external": false }
+        { "title": "AI编程实战：从零到一搭建全栈项目", "path": "/ai-programming-in-action-building-a-full-stack-project-from-scratch", "external": false },
+        { "title": "后端程序员生产力工具合集", "path": "/productivity-tools-for-backend-developers", "external": false },
+		{ "title": "树莓派实战：微信机器人（itchat实现）", "path": "/raspberry-pi-in-action-wechat-bot-implemented-with-itchat", "external": false }
       ]
     },
     {
@@ -96,7 +95,7 @@
       "icon": "rocket",
       "collapsible": true,
       "children": [
-        { "title": "Java烘焙师的2025年总结", "path": "/annual-review/java-roaster-2025-review", "external": false }
+        { "title": "Java烘焙师的2025年总结", "path": "/java-roaster-2025-review", "external": false }
       ]
     },
     { "title": "GitHub", "path": "https://github.com/topcoding", "icon": "github", "external": true }

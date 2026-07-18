@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: docmd-io/deploy@v1
+      - uses: docmd-io/deploy@v1.1
         id: build
         with:
           base: '/arch-notes/'

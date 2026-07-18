@@ -1,4 +1,4 @@
----
+﻿---
 title: 架构师必备：本地缓存原理和应用
 ---
 
@@ -242,11 +242,11 @@ public class LFUCache {
 
 > 如下图所示，Count–Min Sketch 算法类似布隆过滤器 (Bloom filter)思想，对于频率统计我们其实不需要一个精确值。存储数据时，对key进行多次 hash 函数运算后，二维数组不同位置存储频率（Caffeine 实际实现的时候是用一维 long 型数组，每个 long 型数字切分成16份，每份4bit，默认15次为最高访问频率，每个key实际 hash 了四次，落在不同 long 型数字的16份中某个位置）。读取某个key的访问次数时，会比较所有位置上的频率值，取最小值返回。对于所有key的访问频率之和有个最大值，当达到最大值时，会进行reset即对各个缓存key的频率除以2。
 
-> ![](./../../assets/images/https!img2022.cnblogs.com!blog!1247698!202202!1247698-20220228092900176-1256684214.png)
+> ![](/assets/images/https!img2022.cnblogs.com!blog!1247698!202202!1247698-20220228092900176-1256684214.png)
 
 > 如下图缓存访问频率存储主要分为两大部分，即 LRU 和 Segmented LRU 。新访问的数据会进入第一个 LRU，在 Caffeine 里叫 WindowDeque。当 WindowDeque 满时，会进入 Segmented LRU 中的 ProbationDeque，在后续被访问到时，它会被提升到 ProtectedDeque。当 ProtectedDeque 满时，会有数据降级到 ProbationDeque 。数据需要淘汰的时候，对 ProbationDeque 中的数据进行淘汰。具体淘汰机制：取ProbationDeque 中的队首和队尾进行 PK，队首数据是最先进入队列的，称为受害者，队尾的数据称为攻击者，比较两者频率大小，大胜小汰。
 
-> ![](./../../assets/images/https!img2022.cnblogs.com!blog!1247698!202202!1247698-20220228092946841-1999775024.png)
+> ![](/assets/images/https!img2022.cnblogs.com!blog!1247698!202202!1247698-20220228092946841-1999775024.png)
 
 # 5、Spring cache使用示例
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: 架构师必备：HBase行键设计与应用
 ---
 
@@ -19,21 +19,21 @@ title: 架构师必备：HBase行键设计与应用
 
 # HBase应用举例
 ## 冷热数据分离
-![](./../../assets/images/https!img2022.cnblogs.com!blog!1247698!202206!1247698-20220605165652390-1880692877.png)
+![](/assets/images/https!img2022.cnblogs.com!blog!1247698!202206!1247698-20220605165652390-1880692877.png)
 
 * HBase适合作为冷数据存储，存储和查询海量历史数据
 * MySQL适合作为热存储存储，支持数据读写、事务操作
 * 归档近期未更新的历史数据，新增数据至HBase，再删除MySQL记录
 
 ## 流水记录
-![](./../../assets/images/https!img2022.cnblogs.com!blog!1247698!202206!1247698-20220605165736054-636060992.png)
+![](/assets/images/https!img2022.cnblogs.com!blog!1247698!202206!1247698-20220605165736054-636060992.png)
 
 * 流水记录可随时新增字段
 * 适合存储海量流水记录
 
 # 简要回顾HBase架构
 
-![](./../../assets/images/https!img2022.cnblogs.com!blog!1247698!202206!1247698-20220605180847970-1740963755.png)
+![](/assets/images/https!img2022.cnblogs.com!blog!1247698!202206!1247698-20220605180847970-1740963755.png)
 
 * region：所有行按rowkey字典序排列，region是其中一部分，相当于分片，每个region只能在一个region server上
 * region server：可以包含一到多个region，调用HDFS的客户端接口对region所有数据进行读写操作

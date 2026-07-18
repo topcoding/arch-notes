@@ -1,4 +1,4 @@
----
+﻿---
 title: 架构师必备：业务扩展模式选型
 ---
 
@@ -48,7 +48,7 @@ title: 架构师必备：业务扩展模式选型
 
 - 实现：
   相近业务领域的字段，做垂直分表（如拆为订单信息表order_info、订单支付表order_payment、订单物流表order_logistics）。
-  ![image](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202507!1247698-20250704012113174-1706386404.png)
+  ![image](/assets/images/https!img2024.cnblogs.com!blog!1247698!202507!1247698-20250704012113174-1706386404.png)
 
 - 优点：
   
@@ -71,7 +71,7 @@ title: 架构师必备：业务扩展模式选型
   主表：存储核心字段（如业务ID、其它通用关键字段）
   动态扩展表：存储动态扩展字段，与主表通过业务id关联。包括扩展key、扩展value（可以是json格式，方便后续扩展）
   每次新增字段：(1）新增一个扩展key，在扩展value里存储内容；(2）或在已有扩展key的value中新增字段。
-  ![image](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202507!1247698-20250705205145262-1858510928.png)
+  ![image](/assets/images/https!img2024.cnblogs.com!blog!1247698!202507!1247698-20250705205145262-1858510928.png)
 
 之所以通过动态扩展表来实现，是因为很多字段并非通用的，而仅针对部分记录。
 
@@ -122,7 +122,7 @@ CREATE TABLE biz_extension (
   HBase：存储动态扩展字段（稀疏、多列），可以按业务领域垂直拆表，因为在HBase表中新增字段的成本很低
   关联方式：用mysql主表业务ID，作为HBase rowKey的一部分，通过业务id即可查到HBase中的其它扩展信息。
   如果想按条件查询扩展信息，需要把数据导入到ES里，通过ES查询。
-  ![image](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202507!1247698-20250705212900598-539743660.png)
+  ![image](/assets/images/https!img2024.cnblogs.com!blog!1247698!202507!1247698-20250705212900598-539743660.png)
 
 HBase表设计：
 如果业务id是123456789，则rowKey可设计成：{业务id后缀}_{业务id}，如789_123456789；方便将hbase数据打散到不同的region，提高存储和查询性能。

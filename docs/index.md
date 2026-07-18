@@ -1,8 +1,13 @@
+---
+title: Java烘焙师的架构笔记
+description: 微信公众号：Java烘焙师。Java架构师、树莓派爱好者，努力写出精品技术文章，各大平台同名。
+---
+
 # Java烘焙师的架构笔记
 
 Java架构师、树莓派爱好者，努力写出精品技术文章，各大平台同名。
 关注我的微信公众号，获取最新文章推送：**Java烘焙师**
-![微信公众号：Java烘焙师](./../assets/images/qrcode.jpg){ .size-small }
+![微信公众号：Java烘焙师](/assets/images/qrcode.jpg){ .size-small }
 
 # 文章目录
 

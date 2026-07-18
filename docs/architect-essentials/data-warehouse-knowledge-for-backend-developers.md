@@ -1,4 +1,4 @@
----
+﻿---
 title: 架构师必备：后端程序员需要了解的数仓知识
 ---
 
@@ -11,7 +11,7 @@ title: 架构师必备：后端程序员需要了解的数仓知识
 离线数仓是最典型的数仓应用场景。后端服务产生了业务数据、监控埋点、日志等，如果要做统计分析，就要先离线采集到数仓，再通过SQL做聚合查询。
 离线数仓的重点，在于统计分析历史存量数据，做合理的业务域划分、数据分层、数据分区。
 
-![离线数仓数据分层、数据分区](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202512!1247698-20251222013722221-284016663.png)
+![离线数仓数据分层、数据分区](/assets/images/https!img2024.cnblogs.com!blog!1247698!202512!1247698-20251222013722221-284016663.png)
 
 ## 数据采集
 
@@ -75,7 +75,7 @@ title: 架构师必备：后端程序员需要了解的数仓知识
 
 使用flink把数据采集、数据计算、数据导出的流程串起来。这里引用一张某云厂商的实践教程图，里面的数仓存储可替代为其它。
 参考：[实时数仓搭建](https://help.aliyun.com/zh/flink/realtime-flink/use-cases/build-real-time-data-warehouse-based-on-flink-hologres)
-![image](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202512!1247698-20251221001017213-980708973.png)
+![image](/assets/images/https!img2024.cnblogs.com!blog!1247698!202512!1247698-20251221001017213-980708973.png)
 
 * 实时入仓：mysql binlog、或业务事件，触发实时数据流，通过flink实时入仓
 * 数据计算：通过flink关联join多个ods表，得到dwd表，再实时计算得到按维度聚合的dws表

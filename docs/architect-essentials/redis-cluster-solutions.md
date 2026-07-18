@@ -1,4 +1,4 @@
----
+﻿---
 title: 架构师必备：Redis的几种集群方案
 ---
 
@@ -13,7 +13,7 @@ title: 架构师必备：Redis的几种集群方案
 
 # Redis cluster原理
 ## 架构
-![](./../../assets/images/https!img2022.cnblogs.com!blog!1247698!202204!1247698-20220430234128973-1533821036.png)
+![](/assets/images/https!img2022.cnblogs.com!blog!1247698!202204!1247698-20220430234128973-1533821036.png)
 
 是官方支持的Redis集群方案：
 * 去中心化架构，不依赖外部存储，每个节点都有槽位信息、以及一部分数据，各节点之间使用gossip协议交互信息
@@ -40,7 +40,7 @@ title: 架构师必备：Redis的几种集群方案
 
 # codis原理
 ## 架构
-![](./../../assets/images/https!img2022.cnblogs.com!blog!1247698!202204!1247698-20220430205420684-37050990.png)
+![](/assets/images/https!img2022.cnblogs.com!blog!1247698!202204!1247698-20220430205420684-37050990.png)
 
 是Go语言编写的Redis proxy集群方案：
 * codis-proxy作为上层proxy，负责路由请求至底层的Redis分片。client与proxy交互，可以把proxy当作普通的Redis实例一样，因为codis-proxy实现了Redis协议，API保持一致。

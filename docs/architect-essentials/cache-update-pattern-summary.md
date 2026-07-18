@@ -1,4 +1,4 @@
----
+﻿---
 title: 架构师必备：缓存更新模式总结
 ---
 
@@ -17,15 +17,15 @@ title: 架构师必备：缓存更新模式总结
 
 
 
-![image](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250913012431975-1288154151.png)
+![image](/assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250913012431975-1288154151.png)
 
 因此第一次删除缓存后，延迟一小段时间再删除，就能保证缓存和DB的最终一致。下图是引入了延迟双删机制的cache-aside架构图。
 
 cache-aside查询场景：
-![cache-aside查询场景](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250911013627176-926991724.png)
+![cache-aside查询场景](/assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250911013627176-926991724.png)
 
 cache-aside更新场景：
-![cache-aside更新场景](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250911013712740-1200116843.png)
+![cache-aside更新场景](/assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250911013712740-1200116843.png)
 
 ## 适用场景
 
@@ -52,7 +52,7 @@ cache-aside更新场景：
 * 异构数据：监听mysql变更，DB变化时触发更新缓存
 
 更推荐异构数据的方式，好处是：缓存更新及时，并且做成通用功能之后、无需额外开发。
-![image](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250912012547948-717105537.png)
+![image](/assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250912012547948-717105537.png)
 
 # 2、异步写回DB模式（write-back）
 
@@ -61,7 +61,7 @@ cache-aside更新场景：
 * 查询：只查询缓存
 * 更新：先写入缓存，然后发消息、消息链路异步写入DB，或定时任务兜底写入DB
 
-![write-back模式](./../../assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250913172146046-1323212154.png)
+![write-back模式](/assets/images/https!img2024.cnblogs.com!blog!1247698!202509!1247698-20250913172146046-1323212154.png)
 
 ## 适用场景
 

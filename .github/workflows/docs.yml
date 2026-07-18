@@ -19,14 +19,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: docmd-io/deploy@v1.1
-        id: build
+      # 1. 安装最新版 Node.js 环境
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          base: '/arch-notes/'
+          node-version: 22
 
+      # 2. 运行官方最新发布的 docmd 编译器进行打包
+      - name: Build with latest docmd
+        run: npx @docmd/core build
+
+      # 3. 上传构建产物
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.build.outputs.site-dir }}
+          path: 'site' # 对应 docmd.config.json 中的 out: "site"
 
+      # 4. 部署到 GitHub Pages
       - uses: actions/deploy-pages@v4
         id: deploy

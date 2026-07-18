@@ -17,23 +17,29 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      # 1. 安装最新版 Node.js 环境
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      # 2. 运行官方最新发布的 docmd 编译器进行打包
       - name: Build with latest docmd
         run: npx @docmd/core build
 
-      # 3. 上传构建产物
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'site' # 对应 docmd.config.json 中的 out: "site"
+      # 🚀 针对性修复：批量把 HTML 中 src="../assets/" 替换为 src="assets/"
+      # 这样配合已经存在的 <base> 标签，浏览器就能完美拼出 /arch-notes/assets/...
+      - name: Fix Asset Relative Paths
+        run: |
+          find site -name "*.html" -exec sed -i 's|src="../assets/|src="assets/|g' {} +
+          echo "✅ Fixed image paths by removing '../'"
 
-      # 4. 部署到 GitHub Pages
-      - uses: actions/deploy-pages@v4
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'site'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
         id: deploy

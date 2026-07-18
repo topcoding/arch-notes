@@ -21,6 +21,8 @@ jobs:
 
       - uses: docmd-io/deploy@v1
         id: build
+        with:
+          base: '/arch-notes/'
 
       - uses: actions/upload-pages-artifact@v3
         with:

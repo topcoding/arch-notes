@@ -3,6 +3,7 @@
   "url": "https://topcoding.github.io/arch-notes/",
   "src": "docs",
   "out": "site",
+  "base": "/arch-notes/",
   "engine": "js",
   "layout": {
     "spa": true,

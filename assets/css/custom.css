@@ -1,0 +1,6 @@
+img {
+    display: block;          /* 让图片成为块级元素，便于居中 */
+    width: 85%;              /* 宽度设为85% */
+    height: auto;            /* 保持比例 */
+    margin: 0 auto;          /* 水平居中 */
+}
